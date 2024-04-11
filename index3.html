@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculation Form</title>
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div class="main">
+        <h2>Tax Calc</h2>
+
+        <form id="tax-form">
+            <div class="form-content">   
+                <label for="grossAnnualIncome">Enter Gross Annual Income</label>
+                <div class="info-button">?
+                    <div class="tooltip-text">Gross annual income is your total salary in a year before any deductions</div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <input type="text" class="form-control" id="grossAnnualIncome" placeholder="Enter gross Annual income">
+                    <div class="error-icon" style="display: none;">!</div>
+                </div>
+               
+            </div>
+
+            <div class="form-content">   
+                <label for="extraIncome">Enter extra income</label>
+                <div class="info-button">?
+                    <div class="tooltip-text">Additional income sources such as bonuses, overtime pay, commissions, and interest or dividends from investments.</div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <input type="text" class="form-control" id="extraIncome" placeholder="Enter extra income from other sources">
+                    <div class="error-icon" style="display: none;">!</div>
+                </div>
+
+            </div>
+
+            <div class="form-content">   
+                <label for="deductions">Enter total applicable deductions</label>
+                <div class="info-button">?
+                    <div class="tooltip-text">A tax deduction is a total amount an individual can claim to reduce their tax liability</div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <input type="text" class="form-control" id="deductions" placeholder="Enter total applicable deduction">
+                    <div class="error-icon" style="display: none;">!</div>
+                </div>
+                   
+            </div>
+
+            <div class="form-content">
+                <label for="age">Select Age group</label>
+                <div class="info-button">?
+                    <div class="tooltip-text">Select your age</div>
+                </div>
+                <div class="form-group col-xs-12">
+                <select class="form-control-2 col-xs-12" id="age">
+                    <option value="">Select Age Group</option>
+                    <option value="<40">< 40 </option>
+                    <option value="≥40 & <60">≥ 40 & < 60</option>
+                    <option value="≥60">≥ 60</option>
+                </select>
+                <div class="error-icon" style="display: none;">!</div>
+            </div>
+            </div>
+
+            <button type="button" class="btn col-xs-12" onclick="calculateTax()">Submit</button>
+        </form>
+    </div>
+ 
+    <div class="modal" tabindex="-1" role="dialog" id="resultModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title">Tax Calculation Result</h5>
+                </div>
+                <div class="modal-body">
+                    <p id="resultText"></p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">Close</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="script3.js"></script>
+</body>
+</html>
